@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Obras · Nausicaä: Biblioteca dos Conflitos</title>
+<meta name="description" content="[Descrição da página de obras]">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-pagina="obras" data-tema="obras">
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo" id="topo"></header>
+<main id="conteudo">
+  <section class="cab-tema">
+    <div class="wrap">
+      <p class="rot-sec" data-txt="obras.rotulo"></p>
+      <h1 data-txt="obras.titulo"></h1>
+      <p class="lead" data-txt="obras.texto"></p>
+    </div>
+  </section>
+  <section class="wrap pagina" style="padding-top:40px">
+    <div class="cab-secao" style="margin-bottom:56px">
+      <div class="filtros" id="obras-filtros" role="group" aria-label="Filtrar obras por categoria"></div>
+      <div style="display:flex;align-items:center;gap:16px">
+        <label class="sr" for="f-busca">Buscar título ou autor</label>
+        <input id="f-busca" type="search" placeholder="Buscar título ou autor" style="height:36px;padding:0 14px;border:1px solid var(--borda);border-radius:999px;background:var(--papel);font:400 13px var(--fonte);min-width:220px;color:var(--ink)">
+        <span class="contagem" id="obras-conta" aria-live="polite"></span>
+      </div>
+    </div>
+    <ul class="grade-obras" id="lista-obras"></ul>
+  </section>
+</main>
+<footer class="rodape" id="rodape"></footer>
+<script src="dados.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

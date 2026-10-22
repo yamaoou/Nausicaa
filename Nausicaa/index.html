@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nausicaä: Biblioteca dos Conflitos</title>
+<meta name="description" content="[Descrição do site para os buscadores]">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+/* Abertura: só na primeira visita da sessão e sem movimento reduzido */
+try {
+  if (!sessionStorage.getItem('nausicaa:intro') && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('intro-ativa');
+  }
+} catch (e) {}
+</script>
+</head>
+<body data-pagina="index">
+
+<!-- ABERTURA -->
+<div id="intro" role="presentation">
+  <svg class="intro-vento" viewBox="0 0 1440 810" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-20 160 C 240 100, 420 220, 680 150 S 1100 90, 1460 170"/>
+    <path d="M-20 230 C 200 190, 460 280, 720 220 S 1120 170, 1460 250"/>
+    <path d="M-20 300 C 260 260, 440 340, 700 290 S 1140 250, 1460 320"/>
+  </svg>
+  <svg class="intro-ar" viewBox="0 0 1440 810" preserveAspectRatio="none" aria-hidden="true">
+    <g class="intro-folhas"><path d="M180 120 q18 -22 40 -8 q-10 24 -40 8z"/><path d="M1180 190 q20 -24 44 -8 q-12 26 -44 8z"/><path d="M980 110 q14 -18 32 -6 q-8 20 -32 6z"/><path d="M360 260 q14 -16 30 -5 q-8 18 -30 5z"/></g>
+  </svg>
+  <div class="intro-titulo">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 20 c0-4 5-4 5 0 c0 7-10 7-10 0 c0-10 15-10 15 0 c0 13-20 13-20 0" fill="none" stroke="#1B3A5C" stroke-width="2.4" stroke-linecap="round"/></svg>
+    <h1>NAUSICAÄ:<br>BIBLIOTECA DOS CONFLITOS</h1>
+  </div>
+  <svg class="intro-paisagem" viewBox="0 0 1440 300" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 150 C 200 60, 380 110, 600 90 S 1000 30, 1440 100 L1440 300 L0 300z" fill="#D0D5DB"/>
+    <path d="M0 200 C 240 130, 460 190, 720 150 S 1120 110, 1440 170 L1440 300 L0 300z" fill="#AEB8C4"/>
+    <path d="M0 250 C 300 200, 520 250, 800 220 S 1200 190, 1440 235 L1440 300 L0 300z" fill="#6F7F92"/>
+    <path d="M0 285 C 360 255, 700 290, 1000 268 S 1300 262, 1440 280 L1440 300 L0 300z" fill="#1B3A5C"/>
+  </svg>
+  <button class="intro-pular" type="button">PULAR INTRODUÇÃO →</button>
+</div>
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo" id="topo"></header>
+
+<main id="conteudo">
+
+  <!-- CARROSSEL (fundo preto) -->
+  <section class="carrossel" id="carrossel" aria-roledescription="carrossel" aria-label="Conflitos históricos">
+    <div class="wrap">
+      <div class="car-palco">
+        <div class="car-janela"><div class="car-track" id="car-track"></div></div>
+        <button type="button" class="car-seta ant" id="car-ant" aria-label="Slide anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button type="button" class="car-seta prox" id="car-prox" aria-label="Próximo slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+      <div class="car-legenda">
+        <div class="tit"><p class="peq" id="car-periodo"></p><h2 id="car-titulo"></h2></div>
+        <a class="link-forte" id="car-link" href="#acervo">Acessar conteúdo →</a>
+      </div>
+      <div class="car-controles">
+        <div class="car-pos"><span id="car-pos">01 / 07</span><div class="car-pontos" id="car-pontos"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="espaco"></div>
+
+  <!-- VÍDEO -->
+  <section class="secao wrap" aria-labelledby="t-video">
+    <div class="video">
+      <div class="txt revelar">
+        <p class="rot-sec" data-txt="video.rotulo"></p>
+        <h2 id="t-video" data-txt="video.titulo"></h2>
+        <p class="corpo" data-txt="video.texto"></p>
+      </div>
+      <div class="tela revelar">
+        <div class="video-caixa" id="video-caixa">
+          <span class="play"><svg viewBox="0 0 22 22" aria-hidden="true"><path d="M6 3l13 8-13 8z" fill="#D5DAE0"/></svg></span>
+          <span>[ ESPAÇO PARA O VÍDEO DO PROJETO ]</span>
+        </div>
+        <p class="peq" id="video-legenda" style="margin-top:12px"></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="espaco"></div>
+
+  <!-- QUIZ -->
+  <section class="secao wrap" id="quiz" aria-labelledby="t-quiz">
+    <div class="quiz-cab">
+      <p class="rot-sec" data-txt="quiz.rotulo"></p>
+      <h2 id="t-quiz" class="titulo-secao" data-txt="quiz.titulo"></h2>
+      <p class="sec-lead" data-txt="quiz.texto"></p>
+    </div>
+    <div class="quiz" id="quiz-caixa"></div>
+  </section>
+
+  <!-- FAIXA QUE LEVA ÀS OBRAS -->
+  <section class="secao wrap" aria-labelledby="t-banner">
+    <div class="banner" id="banner">
+      <div class="banner-txt">
+        <p class="rot-sec" data-txt="banner.rotulo"></p>
+        <h2 id="t-banner" data-txt="banner.titulo"></h2>
+        <p class="corpo" data-txt="banner.texto"></p>
+        <a class="btn claro-escuro" href="obras.html"><span data-txt="banner.botao"></span> <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="banner-img" id="banner-img"></div>
+    </div>
+  </section>
+
+  <!-- BIBLIOTECA DIGITAL -->
+  <section class="secao wrap" id="acervo" aria-labelledby="t-acervo">
+    <h2 id="t-acervo" class="titulo-secao" data-txt="acervo.titulo"></h2>
+    <p class="sec-lead" data-txt="acervo.texto"></p>
+    <div class="cab-secao" style="margin-top:28px;margin-bottom:0">
+      <div class="filtros" id="acervo-filtros" role="group" aria-label="Filtrar por século">
+        <span class="rot">Filtrar</span>
+        <button type="button" class="chip" data-sec="todos" aria-pressed="true">Todos</button>
+        <button type="button" class="chip" data-sec="20" aria-pressed="false">Século XX</button>
+        <button type="button" class="chip" data-sec="21" aria-pressed="false">Século XXI</button>
+      </div>
+      <span class="contagem" id="acervo-conta" aria-live="polite"></span>
+    </div>
+    <div class="acervo-lista" id="acervo-lista"></div>
+  </section>
+
+</main>
+
+<footer class="rodape" id="rodape"></footer>
+<script src="dados.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
